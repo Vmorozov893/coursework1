@@ -34,7 +34,7 @@ public class Main {
         System.out.println("Сумма зп сотрудников в отделе 4: " + calculateSumOfSalariesInTheDepartment(4));
         System.out.println("Средняя зп в отделе 2: " + calculateAverageOfSalariesInTheDepartment(2));
         salaryIndexingInTheDepartment(50,1);
-        print();
+        printEmployeesInTheDepartment(1);
 
     }
 
@@ -134,6 +134,17 @@ public class Main {
                 employee.setSalary((int) (employee.getSalary() * (1 + (double) percent / 100)));
             }
 
+        }
+    }
+
+    private static void printEmployeesInTheDepartment(int department){
+        System.out.println("Сотрудники " + department + " отдела: ");
+        for(Employee employee : EMPLOYEES){
+            if(employee.getDepartment() == department){
+                System.out.println("id=" + employee.getId() +
+                        ", fullName='" + employee.getFullName() +
+                        "', salary=" + employee.getSalary());
+            }
         }
     }
 }
