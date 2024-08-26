@@ -35,6 +35,8 @@ public class Main {
         System.out.println("Средняя зп в отделе 2: " + calculateAverageOfSalariesInTheDepartment(2));
         salaryIndexingInTheDepartment(50,1);
         printEmployeesInTheDepartment(1);
+        employeesWithASalaryLessThan(100_000);
+        employeesWithASalaryGreaterThan(100_000);
 
     }
 
@@ -141,6 +143,27 @@ public class Main {
         System.out.println("Сотрудники " + department + " отдела: ");
         for(Employee employee : EMPLOYEES){
             if(employee.getDepartment() == department){
+                System.out.println("id=" + employee.getId() +
+                        ", fullName='" + employee.getFullName() +
+                        "', salary=" + employee.getSalary());
+            }
+        }
+    }
+
+    private static void employeesWithASalaryLessThan(int limiter){
+        System.out.println("Сотрудники с зп меньше чем " + limiter);
+        for(Employee employee : EMPLOYEES){
+            if(employee.getSalary() < limiter){
+                System.out.println("id=" + employee.getId() +
+                        ", fullName='" + employee.getFullName() +
+                        "', salary=" + employee.getSalary());
+            }
+        }
+    }
+    private static void employeesWithASalaryGreaterThan(int limiter){
+        System.out.println("Сотрудники с зп больше чем " + limiter);
+        for(Employee employee : EMPLOYEES){
+            if(employee.getSalary() > limiter){
                 System.out.println("id=" + employee.getId() +
                         ", fullName='" + employee.getFullName() +
                         "', salary=" + employee.getSalary());
