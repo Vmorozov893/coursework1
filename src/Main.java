@@ -32,6 +32,8 @@ public class Main {
         System.out.println("Сотрудник с наименьшей зп в отделе 3: " + findEmployeeWithMinSalaryInTheDepartment(3));
         System.out.println("Сотрудник с наибольшей зп в отделе 1: " + findEmployeeWithMaxSalaryInTheDepartment(1));
         System.out.println("Сумма зп сотрудников в отделе 4: " + calculateSumOfSalariesInTheDepartment(4));
+        System.out.println("Средняя зп в отделе 2: " + calculateAverageOfSalariesInTheDepartment(2));
+
 
     }
 
@@ -116,4 +118,13 @@ public class Main {
         return sum;
     }
 
+    private static double calculateAverageOfSalariesInTheDepartment(int department) {
+        int employees =0;
+        for (Employee employee : EMPLOYEES){
+            if(employee.getDepartment()==department) {
+                employees++;
+            }
+        }
+        return (double) calculateSumOfSalaries() / employees;
+    }
 }
