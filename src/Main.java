@@ -33,7 +33,8 @@ public class Main {
         System.out.println("Сотрудник с наибольшей зп в отделе 1: " + findEmployeeWithMaxSalaryInTheDepartment(1));
         System.out.println("Сумма зп сотрудников в отделе 4: " + calculateSumOfSalariesInTheDepartment(4));
         System.out.println("Средняя зп в отделе 2: " + calculateAverageOfSalariesInTheDepartment(2));
-
+        salaryIndexingInTheDepartment(50,1);
+        print();
 
     }
 
@@ -126,5 +127,13 @@ public class Main {
             }
         }
         return (double) calculateSumOfSalaries() / employees;
+    }
+    private static void salaryIndexingInTheDepartment(int percent, int department) {
+        for (Employee employee : EMPLOYEES) {
+            if(employee.getDepartment() == department){
+                employee.setSalary((int) (employee.getSalary() * (1 + (double) percent / 100)));
+            }
+
+        }
     }
 }
